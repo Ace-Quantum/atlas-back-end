@@ -58,7 +58,7 @@ def retrieve_to_do(emp_id):
         csv_data.append(task_dict)
 
     with open(filename, 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, quoting=csv.QUOTE_ALL)
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
 
         writer.writerows(csv_data)
 
