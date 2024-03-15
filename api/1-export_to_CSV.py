@@ -52,7 +52,7 @@ def retrieve_to_do(emp_id):
     for task in todo_all:
         task_list = []
         task_list.append(emp_id)
-        task_list.append(emp_name)
+        task_list.append(emp_dict.get("username"))
         task_list.append(task.get("completed"))
         task_list.append(task.get("title"))
         csv_data.append(task_list)
