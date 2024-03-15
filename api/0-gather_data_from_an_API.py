@@ -14,8 +14,8 @@ def retrieve_to_do(emp_id):
     """
     More documentation for the check
     """
-    emp_todo_all = {}
-    emp_todo_done = []
+    todo_all = {}
+    todo_done = []
 
     site_url = "https://jsonplaceholder.typicode.com/"
     emp_url = f"{site_url}users/{emp_id}"
@@ -27,18 +27,18 @@ def retrieve_to_do(emp_id):
     to_dos_data = requests.get(to_do_url)
 
     emp_dict = employee_data.json()
-    emp_todo_all = to_dos_data.json()
+    todo_all = to_dos_data.json()
 
     emp_name = emp_dict.get("name")
 
-    for task in emp_todo_all:
+    for task in todo_all:
         if task.get("completed") is True:
             # print(task)
-            emp_todo_done.append(task)
+            todo_done.append(task)
 
-    print(f"Employee {emp_name} is done with tasks({len(emp_todo_done)}/{len(emp_todo_all)}):")
+    print(f"Employee {emp_name} is done with tasks({len(todo_done)}/{len(todo_all)}):")
 
-    for task in emp_todo_done:
+    for task in todo_done:
         print("  " + task.get("title"))
 
 
