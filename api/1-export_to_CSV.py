@@ -18,10 +18,10 @@ def retrieve_to_do(emp_id):
     todo_all = {}
     todo_done = []
 
-    fields = ['userId', 'completed', 'title', 'id']
+    # fields = ['userId', 'completed', 'title', 'id']
     filename = f"{emp_id}.csv"
 
-    print(filename)
+    # print(filename)
 
     site_url = "https://jsonplaceholder.typicode.com/"
     emp_url = f"{site_url}users/{emp_id}"
@@ -51,7 +51,7 @@ def retrieve_to_do(emp_id):
     with open(filename, 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fields)
 
-        writer.writeheader()
+        # writer.writeheader()
 
         writer.writerows(todo_all)
 
