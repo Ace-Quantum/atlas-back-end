@@ -28,6 +28,6 @@ def retrieve_to_do(emp_id):
         employee = employee_data.json()
         to_dos = to_dos_data()
 
-        print("{employee}")        
+        print("{employee}")
     else:
         print(f"nope")
