@@ -40,7 +40,7 @@ def retrieve_to_do(emp_id):
     print(f"({len(todo_done)}/{len(todo_all)}):")
 
     for task in todo_done:
-        print(" \t" + task.get("title"))
+        print("\t " + task.get("title"))
 
 
 if __name__ == "__main__":
