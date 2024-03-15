@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+I'm documenting for the check
+"""
+
 if __name__ == "__main__":
     retrieve_to_do
 
@@ -9,6 +13,9 @@ import sys
 import urllib
 
 def retrieve_to_do(emp_id):
+    """
+    More documentation for the check
+    """
     site_url = "https://jsonplaceholder.typicode.com/"
     emp_url = format("{site_url}/users/{emp_id}")
     to_do_url = format("{site_url}/todos")
