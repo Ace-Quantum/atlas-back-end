@@ -50,12 +50,12 @@ def retrieve_to_do(emp_id):
         print("\t " + task.get("title"))
 
     for task in todo_all:
-        task_dict = {}
-        task_dict.update({'USER_ID': emp_id})
-        task_dict.update({'USERNAME': emp_name})
-        task_dict.update({'TASK_COMPLETED_STATUS': task.get("completed")})
-        task_dict.update({'TASK_TITLE': task.get("title")})
-        csv_data.append(task_dict)
+        task_list = []
+        task_list.append(emp_id)
+        task_list.append(emp_name)
+        task_list.append(task.get("completed"))
+        task_list.append(task.get("title"))
+        csv_data.append(task_list)
 
     with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
