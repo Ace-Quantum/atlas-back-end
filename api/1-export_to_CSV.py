@@ -18,8 +18,10 @@ def retrieve_to_do(emp_id):
     todo_all = {}
     todo_done = []
 
-    fields = ['USER_ID', 'USERNAME', 'STATUS', 'TITLE']
+    fields = ['userId', 'completed', 'title', 'id']
     filename = f"{emp_id}.csv"
+
+    print(filename)
 
     site_url = "https://jsonplaceholder.typicode.com/"
     emp_url = f"{site_url}users/{emp_id}"
