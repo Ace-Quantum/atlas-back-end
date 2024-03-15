@@ -21,12 +21,13 @@ def retrieve_to_do(emp_id):
     emp_url = format("{site_url}/users/{emp_id}")
     to_do_url = format("{site_url}/todos")
 
-    response = requests.get(format("{site_url}{emp_id}"))
+    employee_data = requests.get(format("{emp_url}"))
+    to_dos_data = requests.get(format("{to_do_url}"))
 
-    if response.status_code == 200:
-        stuffs = response.json()
+    if employee_data.status_code == 200 or to_dos_data.status_code == 200:
+        employee = employee_data.json()
+        to_dos = to_dos_data()
 
-        for stuff in stuffs:
-            print(f"stuff: {stuff['EMPLOYEE_NAME']}")
+        print("{employee}")        
     else:
         print(f"nope")
