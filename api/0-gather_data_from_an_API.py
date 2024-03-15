@@ -13,7 +13,7 @@ def retrieve_to_do(emp_id):
     emp_url = format("{site_url}/users/{emp_id}")
     to_do_url = format("{site_url}/todos")
 
-    response = requests.get(format({site_url}{emp_id}))
+    response = requests.get(format("{site_url}{emp_id}"))
 
     if response.status_code == 200:
         stuffs = response.json()
