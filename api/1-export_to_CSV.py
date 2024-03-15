@@ -17,6 +17,7 @@ def retrieve_to_do(emp_id):
     """
     todo_all = {}
     todo_done = []
+    csv_data = []
 
     fields = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
     filename = f"{emp_id}.csv"
@@ -48,12 +49,20 @@ def retrieve_to_do(emp_id):
     for task in todo_done:
         print("\t " + task.get("title"))
 
+    for task in todo_all:
+        task_dict = {}
+        task_dict.update({'USER_ID':emp_id})
+        task_dict.update({'USERNAME':emp_name})
+        task_dict.update({'TASK_COMPLETED_STATUS':task.get("completed")})
+        task_dict.update({'TASK_TITLE':task.get("title")})
+        csv_data.append(task_dict)
+
     with open(filename, 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fields)
 
         writer.writeheader()
 
-        writer.writerows(todo_all)
+        writer.writerows(csv_data)
 
 
 if __name__ == "__main__":
