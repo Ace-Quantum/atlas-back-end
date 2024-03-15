@@ -18,7 +18,7 @@ def retrieve_to_do(emp_id):
     todo_all = {}
     todo_done = []
 
-    fields = ['userId', 'completed', 'title', 'id']
+    fields = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
     filename = f"{emp_id}.csv"
 
     # print(filename)
