@@ -49,7 +49,7 @@ def retrieve_to_do(emp_id):
         print("\t " + task.get("title"))
 
     with open(filename, 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=fields)
+        writer = csv.DictWriter(csvfile)
 
         # writer.writeheader()
 
