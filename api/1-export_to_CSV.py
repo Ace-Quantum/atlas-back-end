@@ -19,7 +19,7 @@ def retrieve_to_do(emp_id):
     todo_done = []
     csv_data = []
 
-    fields = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
+    # fields = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
     filename = f"{emp_id}.csv"
 
     # print(filename)
@@ -58,9 +58,7 @@ def retrieve_to_do(emp_id):
         csv_data.append(task_dict)
 
     with open(filename, 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=fields)
-
-        writer.writeheader()
+        writer = csv.DictWriter(csvfile, quoting=csv.QUOTE_ALL)
 
         writer.writerows(csv_data)
 
