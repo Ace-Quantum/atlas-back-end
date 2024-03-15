@@ -36,8 +36,8 @@ def retrieve_to_do(emp_id):
             # print(task)
             emp_to_do_done.append(task)
 
-    print(f"Employee {emp_name} is done with tasks(
-          {len(emp_to_do_done)}/{len(emp_to_do_all)}):")
+    print(f"Employee {emp_name} is done with tasks({len(
+        emp_to_do_done)}/{len(emp_to_do_all)}):")
 
     for task in emp_to_do_done:
         print("  " + task.get("title"))
