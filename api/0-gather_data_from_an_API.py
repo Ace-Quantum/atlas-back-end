@@ -12,6 +12,7 @@ import requests
 import sys
 import urllib
 
+
 def retrieve_to_do(emp_id):
     """
     More documentation for the check
