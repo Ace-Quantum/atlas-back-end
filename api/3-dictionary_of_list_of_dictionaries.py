@@ -32,6 +32,7 @@ def retrieve_to_do():
         # print({emp['id']})
         # print({emp['name']})
         emp_id = emp.get("id")
+        # print({emp_id})
         todo_url = f"{emps_url}/{emp_id}/todos"
         todo_all = requests.get(todo_url)
         todo_all_dict = todo_all.json()
@@ -40,11 +41,15 @@ def retrieve_to_do():
             # print({todo['userId']})
             # print({todo['title']})
             temp_dict['username'] = emp.get('username')
+            # print({emp.get('username')})
             temp_dict['task'] = todo.get('title')
+            # print({todo.get('title')})
             temp_dict['completed'] = todo.get('completed')
+            # print({todo.get('completed')})
             task_list.append(temp_dict)
             temp_dict = {}
         export_dict[emp_id] = task_list
+        task_list = []
 
     with open(filepath, "w") as f:
         json.dump(export_dict, f)
