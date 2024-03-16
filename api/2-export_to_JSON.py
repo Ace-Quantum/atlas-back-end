@@ -32,6 +32,7 @@ def retrieve_to_do(emp_id):
     todo_all = to_dos_data.json()
 
     emp_name = emp_dict.get("name")
+    # print(emp_dict.get("username"))
 
     for task in todo_all:
         if task.get("completed") is True:
@@ -40,14 +41,22 @@ def retrieve_to_do(emp_id):
     print(f"Employee {emp_name} is done with tasks", end="")
     print(f"({len(todo_done)}/{len(todo_all)}):")
 
+    # print(emp_dict.get("username"))
+
     for task in todo_done:
         print("\t " + task.get("title"))
 
+    # print(emp_dict.get("username"))
+
     for task in todo_all:
+        # print(emp_dict.get("username"))
+        # print(f"task: {task.get('title')}, status: {task.get('completed')}, username: {task.get('username')}")
         json_in_dict_in_dict["task"] = task.get("title")
         json_in_dict_in_dict["completed"] = task.get("completed")
-        json_in_dict_in_dict["username"] = task.get("username")
+        json_in_dict_in_dict["username"] = emp_dict.get("username")
         json_in_dict.append(json_in_dict_in_dict)
+
+    # print(json_in_dict)
 
     json_dict[emp_id] = json_in_dict
 

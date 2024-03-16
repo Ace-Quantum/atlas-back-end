@@ -53,6 +53,7 @@ def retrieve_to_do(emp_id):
         task_list = []
         task_list.append(emp_id)
         task_list.append(emp_dict.get("username"))
+        # print(f"username: {emp_dict.get('username')}")
         task_list.append(task.get("completed"))
         task_list.append(task.get("title"))
         csv_data.append(task_list)
