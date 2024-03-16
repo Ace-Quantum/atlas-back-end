@@ -7,6 +7,7 @@ documentation for the check
 import json
 import requests
 
+
 def retrieve_to_do():
     """
     more documentation
@@ -47,6 +48,7 @@ def retrieve_to_do():
 
     with open(filepath, "w") as f:
         json.dump(export_dict, f)
+
 
 if __name__ == "__main__":
     retrieve_to_do()
