@@ -17,7 +17,8 @@ def retrieve_to_do(emp_id):
     todo_all = {}
     todo_done = []
     json_dict = {}
-    json_in_dict = {}
+    json_in_dict = []
+    json_in_dict_in_dict = {}
     filepath = f"{emp_id}.json"
 
     site_url = "https://jsonplaceholder.typicode.com/"
@@ -43,9 +44,10 @@ def retrieve_to_do(emp_id):
         print("\t " + task.get("title"))
 
     for task in todo_all:
-        json_in_dict["task"] = task.get("title")
-        json_in_dict["completed"] = task.get("completed")
-        json_in_dict["username"] = task.get("username")
+        json_in_dict_in_dict["task"] = task.get("title")
+        json_in_dict_in_dict["completed"] = task.get("completed")
+        json_in_dict_in_dict["username"] = task.get("username")
+        json_in_dict.append(json_in_dict_in_dict)
 
     json_dict[emp_id] = json_in_dict
 
