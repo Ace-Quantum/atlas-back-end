@@ -50,7 +50,6 @@ def retrieve_to_do(emp_id):
 
     for task in todo_all:
         # print(emp_dict.get("username"))
-        # print(f"task: {task.get('title')}, status: {task.get('completed')}, username: {task.get('username')}")
         json_in_dict_in_dict["task"] = task.get("title")
         json_in_dict_in_dict["completed"] = task.get("completed")
         json_in_dict_in_dict["username"] = emp_dict.get("username")
