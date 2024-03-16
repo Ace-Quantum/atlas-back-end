@@ -24,7 +24,6 @@ def retrieve_to_do(emp_id):
     emp_url = f"{site_url}users/{emp_id}"
     to_do_url = f"{emp_url}/todos"
 
-
     employee_data = requests.get(emp_url)
     to_dos_data = requests.get(to_do_url)
 
