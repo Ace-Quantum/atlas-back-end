@@ -47,7 +47,7 @@ def retrieve_to_do(emp_id):
         print("\t " + task.get("title"))
 
     # print(emp_dict.get("username"))
-        
+
     # debug_counter = 0
 
     for task in todo_all:
